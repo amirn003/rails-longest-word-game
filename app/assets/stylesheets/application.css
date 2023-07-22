@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ .main-div {
+  margin: 20px 100px;
+  /* background-color: rgb(100, 193, 236); */
+ }
+
+ .word-input {
+  width: 900px;
+ }
+
+ li {
+  color: white;
+  font-size: 40px;
+  display:inline-block;
+  text-align: center;
+  border: 3px solid blue;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background-color: rgb(100, 193, 236);
+ }
