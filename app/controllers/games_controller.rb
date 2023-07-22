@@ -9,14 +9,17 @@ class GamesController < ApplicationController
 
   def score
     attempt = params[:word]
-    @grid = params[:hidden_grid]
+    @grid = JSON.parse(params[:hidden_grid])
     @in_grid = word_in_grid?(attempt, @grid)
     @fetch = fetch_word(attempt)
   end
 
   def create_grid
     grid = []
-    10.times do
+    3.times do
+      grid << ['A', 'E', 'I', 'O', 'U'].sample
+    end
+    7.times do
       grid << ('A'..'Z').to_a.sample
     end
     grid

@@ -1,8 +1,13 @@
 <h1>Result</h1>
-<p>Find me in app/views/games/score.html.erb</p>
 
-<p>Fetch: <%= @fetch %></p>
-<p>Grid: <%= @grid %></p>
-<p>IN Grid: <%= @in_grid %></p>
+<% if @in_grid  %>
+  <% if @fetch  %>
+    <p> <strong>Congratulations!</strong> <%= params[:word].upcase %> is a valid english word.</p>
+  <% else  %>
+    <p> Sorry but <strong><%= params[:word].upcase %></strong> does not seem to be a valid english word.. </p>
+  <% end %>
+<% else %>
+  <p>Sorry but <strong><%= params[:word].upcase %></strong> can't be build out of <%= @grid.join(", ") %></p>
+<% end %>
 
 <%= link_to "Play again", new_path %>
